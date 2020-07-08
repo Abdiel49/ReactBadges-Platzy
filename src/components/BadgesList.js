@@ -20,7 +20,7 @@
                 className="Email text-lowercase" >
                 { badge.email }
               </div>
-              <spam className="Twitter">@{badge.twitter}</spam>
+              <div className="Twitter">@{badge.twitter}</div>
             </div>
           </li>
         );
