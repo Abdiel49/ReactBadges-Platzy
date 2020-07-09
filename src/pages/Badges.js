@@ -5,6 +5,7 @@ import BadgesList from '../components/BadgesList'
 import confLogo from '../images/badge-header.svg'
 import './styles/Badges.css'
 import api from '../api'
+import PageLoading from '../components/PageLoading'
 
 class Badges extends React.Component{
   
@@ -31,7 +32,7 @@ class Badges extends React.Component{
 
   render(){
     if( this.state.loading === true){
-      return <h3>Loading...</h3>
+      return <PageLoading/>
     }
     if( this.state.error){
       return <h3>Error: {this.state.error.message}</h3>

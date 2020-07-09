@@ -456,6 +456,22 @@
       "jobTitle": "someone",
       "twitter": "test",
       "id": "40baPWN"
+    },
+    {
+      "firstName": "abdiel",
+      "lastName": "orellana",
+      "email": "abdiel@gmail.com",
+      "jobTitle": "Frontend Developer",
+      "twitter": "abdiel_orellana",
+      "id": "ObZhL1C"
+    },
+    {
+      "firstName": "Choco",
+      "lastName": "Michigan",
+      "email": "elMichi@gmail.com",
+      "jobTitle": "Wiscas Test",
+      "twitter": "michiWiscas",
+      "id": "WR5ERMT"
     }
   ]
 }
