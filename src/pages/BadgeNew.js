@@ -1,5 +1,6 @@
 import React from 'react';
 
+import api from '../api'
 import './styles/BadgeNew.css';
 import header from '../images/badge-header.svg';
 import Badge from '../components/Badge';
@@ -16,6 +17,19 @@ class BadgeNew extends React.Component {
       }
     })
   }
+
+  handleSubmit = async e => {
+    e.preventDefault()
+    this.setState ({ loading:true, error:null })
+
+    try{
+      await api.badges.create( this.state.form )
+      this.setState ({ loading:false })
+    }catch (error) {
+      this.setState ({ loading:false, error:error })
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -28,18 +42,19 @@ class BadgeNew extends React.Component {
           <div className="row">
             <div className="col-6">
               <Badge 
-                firstName={this.state.form.firstName}
-                lastName={this.state.form.lastName}
-                email={this.state.form.email}
-                twitter={this.state.form.twitter}
-                jobTitle={this.state.form.jobTitle}
-                avatarUrl="https://www/gravatar.com/avatar/21594ed15d68ace39656"
+                firstName={this.state.form.firstName || 'FRIST_NAME'}
+                lastName={this.state.form.lastName || 'LAST_NAME'}
+                email={this.state.form.email || 'EMAIL'}
+                twitter={this.state.form.twitter || 'twitter'}
+                jobTitle={this.state.form.jobTitle || 'JOB_TITLE'}
+                avatarUrl="https://www.gravatar.com/avatar/bd97d274defd330297e4fb4a8cec9495?d=identicon"
               />
             </div>
 
             <div className="col-6">
               <BadgeForm 
                 onChange = { this.handleChange }
+                onSubmit = { this.handleSubmit }
                 formValues = { this.state.form } />
             </div>
           </div>
