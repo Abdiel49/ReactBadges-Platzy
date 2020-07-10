@@ -1,0 +1,15 @@
+
+.Badge__info {
+  padding: 1rem;
+}
+
+.Twitter {
+  color : #1daaf2;
+}
+.Avatar {
+  border-radius: 50%;
+  margin-left: 1rem;
+  vertical-align: center;
+  width: 80px;
+  height: 80px;
+}

@@ -3,20 +3,28 @@ import { Link } from 'react-router-dom'
 
 import BadgesList from '../components/BadgesList'
 import confLogo from '../images/badge-header.svg'
-import './styles/Badges.css'
-import api from '../api'
 import PageLoading from '../components/PageLoading'
+import MiniLoader from '../components/MiniLoader'
+import api from '../api'
+
+import './styles/Badges.css'
 
 class Badges extends React.Component{
   
   state = {
     loading : true,
     error : null,
-    date : undefined,
+    data : undefined,
   }
 
   componentDidMount () {
     this.fetchData()
+
+    this.intervalID = setInterval( this.fetchData, 5000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.intervalID)
   }
 
   fetchData = async () => {
@@ -31,7 +39,7 @@ class Badges extends React.Component{
   }
 
   render(){
-    if( this.state.loading === true){
+    if( this.state.loading === true && !this.state.data){
       return <PageLoading/>
     }
     if( this.state.error){
@@ -66,10 +74,11 @@ class Badges extends React.Component{
               <BadgesList 
                 badges={ this.state.data }
               />
-              
+              {this.state.loading && <MiniLoader />}
             </div>
           </div>
-
+          
+          
         </div>
       </React.Fragment> 
     );

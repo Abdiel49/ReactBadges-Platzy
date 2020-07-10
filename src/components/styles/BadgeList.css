@@ -1,24 +1,10 @@
 .BadgeList li {
     margin-bottom: 1rem;
-    background: rgb(218, 218, 218);
+    /*background: rgb(218, 218, 218);*/
 }
 
 .BadgesListItem {
     display: flex;
-    background: #c7c7c7;
+    background: rgb(223, 223, 223);
     border-radius: 2em;
-}
-
-.Badge__info {
- margin-top: 1rem;
-}
-
-.Twitter {
-    color : #1daaf2;
-
-}
-.Avatar {
-    border-radius: 50%;
-    margin: 1rem;
-    display: flex;
-}
+  }
