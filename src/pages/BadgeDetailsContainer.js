@@ -30,6 +30,7 @@ class BadgeDetailsContainer extends React.Component {
       this.setState({ loading: false, error:error })
     }
   }
+  
   handleCloseModal = e => {
     this.setState({ modalIsOpen:false })
   }
@@ -53,6 +54,7 @@ class BadgeDetailsContainer extends React.Component {
       this.setState({loading: false, error:error})
     }
   } 
+
   render () {
     if(this.state.loading){
       return <PageLoading />
